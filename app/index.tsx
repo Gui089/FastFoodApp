@@ -5,6 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import Images from '../constants/images';
 import { PrimaryText } from "@/components/atoms/PrimaryText";
 import { CustomButton } from "@/components/molecules/CustomButton";
+import { router } from "expo-router";
 
 export default function IndexScreen(){
     return (
@@ -16,7 +17,10 @@ export default function IndexScreen(){
                 <ThemedView style={styles.actionsView}>
                     <CustomButton 
                         variant="secondary" 
-                        title="Sign Up"
+                        title="Home"
+                        onPress={() => {
+                            router.replace("/home");
+                        }}
                     />
                     <CustomButton 
                         variant="primary" 
