@@ -3,6 +3,8 @@ import React from "react"
 import { Platform, StyleSheet, Image } from "react-native"
 import { StatusBar } from 'expo-status-bar';
 import Images from '../constants/images';
+import { PrimaryText } from "@/components/atoms/PrimaryText";
+import { CustomButton } from "@/components/molecules/CustomButton";
 
 export default function IndexScreen(){
     return (
@@ -10,6 +12,17 @@ export default function IndexScreen(){
             <ThemedView style={styles.contentView}>
 
                 <Image style={styles.welcomeIllustration} source={Images.WelcomeImage} resizeMode="cover"/>
+
+                <ThemedView style={styles.actionsView}>
+                    <CustomButton 
+                        variant="secondary" 
+                        title="Sign Up"
+                    />
+                    <CustomButton 
+                        variant="primary" 
+                        title="Login" />
+                </ThemedView>
+
 
                 <StatusBar style={Platform.OS === "ios" ? "light" : "dark"}/>
             </ThemedView>
@@ -27,5 +40,11 @@ const styles = StyleSheet.create({
     welcomeIllustration: {
         width:327,
         height:500
+    },
+    actionsView: {
+        width:'90%',
+        justifyContent:'center',
+        alignItems:'center',
+        paddingTop:30
     }
 });
