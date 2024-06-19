@@ -1,6 +1,8 @@
 import { ThemedView } from "@/components/ThemedView";
 import { PrimaryText } from "@/components/atoms/PrimaryText";
+import { CategoryBadge } from "@/components/molecules/CategoryBadge";
 import { SectionHeader } from "@/components/molecules/SectionHeader";
+import { HorizontalCategories } from "@/components/organisms/HorizontalCategories";
 import images from "@/constants/images";
 import { StatusBar } from "expo-status-bar";
 import { Image, Platform, ScrollView, StyleSheet } from "react-native";
@@ -47,7 +49,13 @@ export default function HomeScreen(){
                 <ThemedView 
                     style={styles.topCategoriesContent}
                 >
-                    <SectionHeader title="Top Categories " action={() => {}} actionLabel="View All"/>
+                    <SectionHeader 
+                        title="Top Categories " 
+                        action={() => {}} 
+                        actionLabel="View All"
+                    />
+                    <HorizontalCategories />
+
                 </ThemedView>
             </ScrollView>
 
