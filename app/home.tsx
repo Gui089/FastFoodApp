@@ -1,5 +1,6 @@
 import { ThemedView } from "@/components/ThemedView";
 import { PrimaryText } from "@/components/atoms/PrimaryText";
+import { SectionHeader } from "@/components/molecules/SectionHeader";
 import images from "@/constants/images";
 import { StatusBar } from "expo-status-bar";
 import { Image, Platform, ScrollView, StyleSheet } from "react-native";
@@ -41,6 +42,12 @@ export default function HomeScreen(){
                         style={styles.dashboardBanner}
                         source={images.DashBoardBanner} 
                         resizeMode="cover" />
+                </ThemedView>
+
+                <ThemedView 
+                    style={styles.topCategoriesContent}
+                >
+                    <SectionHeader title="Top Categories " action={() => {}} actionLabel="View All"/>
                 </ThemedView>
             </ScrollView>
 
@@ -90,5 +97,8 @@ const styles = StyleSheet.create({
         width:'94%',
         height:170,
         borderRadius:12,
+    },
+    topCategoriesContent: {
+        flexDirection:'column',
     }
 });
